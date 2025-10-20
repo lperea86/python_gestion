@@ -1,0 +1,19 @@
+{% extends "core/base.html" %}
+{% block title %}Buscar{% endblock %}
+{% block content %}
+<h3 class="mb-3">Buscar productos</h3>
+<form method="get" class="row g-2 mb-3">
+  <div class="col-auto">{{ form.q }}</div>
+  <div class="col-auto"><button class="btn btn-outline-secondary">Buscar</button></div>
+</form>
+{% if resultados is not None %}
+  <h5 class="mb-2">Resultados</h5>
+  <ul class="list-group">
+    {% for p in resultados %}
+      <li class="list-group-item">{{ p.codigo }} — {{ p.nombre }}</li>
+    {% empty %}
+      <li class="list-group-item">Sin resultados</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{% endblock %}

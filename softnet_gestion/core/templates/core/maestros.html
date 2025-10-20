@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+{% block title %}Maestros{% endblock %}
+{% block content %}
+<h3>Maestros</h3>
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between">
+    <span>Usuarios y Permisos</span>
+    <a href="{% url 'usuarios_list' %}" class="btn btn-sm btn-outline-secondary">Ver</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between">
+    <span>Productos</span>
+    <a href="{% url 'productos_list' %}" class="btn btn-sm btn-outline-secondary">Ver</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between">
+    <span>Catálogos</span>
+    <span>
+      <a href="{% url 'categoria_crear' %}" class="btn btn-sm btn-outline-primary">Nueva Categoría</a>
+      <a href="{% url 'unidad_crear' %}" class="btn btn-sm btn-outline-primary">Nueva Unidad</a>
+    </span>
+  </li>
+</ul>
+{% endblock %}
